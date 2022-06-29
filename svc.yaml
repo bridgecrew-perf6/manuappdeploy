@@ -5,6 +5,7 @@ metadata:
   labels:
     app: manulbfinal
   name: manulbfinal
+  namespace: manu-ns
 spec:
   ports:
   - name: 1234-80
