@@ -1,0 +1,19 @@
+kind: Ingress
+metadata:
+  name: manu-route-rule1
+  namespace: manu-ns
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: www.manu.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: manulbfinal
+            port:
+              number: 80
