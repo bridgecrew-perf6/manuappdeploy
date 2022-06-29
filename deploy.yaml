@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: manuu-cisco-app
+  name: manu-cisco-app
+  namespace: manu-project # namespace 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: manu-cisco-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: manu-cisco-app
+    spec:
+      containers:
+      - image: manusd/manuwebapp:ciscov1
+        name: manuwebapp
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always # everytime pull image 
+        resources: # restricting pod container in term of resoruces 
+          requests:
+            cpu: 100m
+            memory: 200M
+          limits:
+            cpu: 200m
+            memory: 300M
