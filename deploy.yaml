@@ -5,7 +5,7 @@ metadata:
   labels:
     app: manuu-cisco-app
   name: manu-cisco-app
-  namespace: manu-project # namespace 
+  namespace: manu-ns # namespace 
 spec:
   replicas: 1
   selector:
